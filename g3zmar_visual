@@ -1,6 +1,5 @@
--- Load Spawner API
-local Spawner = loadstring(game:HttpGet("https://pastesio.com/raw/growagardenspawner"))()
-Spawner.Load()
+-- Load the obfuscated script with Spawner functions
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Gey123123/G3zmar_spawnerScript/main/g3zmar_visual"))()
 
 -- Destroy previous GUI if exists
 pcall(function()
@@ -47,13 +46,12 @@ closeBtn.TextColor3 = Color3.new(1, 1, 1)
 closeBtn.TextSize = 16
 Instance.new("UICorner", closeBtn).CornerRadius = UDim.new(1, 0)
 
--- Close button functionality
+-- Close functionality
 closeBtn.MouseButton1Click:Connect(function()
 	frame.Visible = false
 	reopenBtn.Visible = true
 end)
 
--- Reopen button functionality
 reopenBtn.MouseButton1Click:Connect(function()
 	frame.Visible = true
 	reopenBtn.Visible = false
@@ -74,6 +72,7 @@ title.TextXAlignment = Enum.TextXAlignment.Left
 local currentTab = "Pet"
 local tabNames = {"Pet", "Seed", "Egg"}
 local tabs = {}
+
 local function createTab(name, index)
 	local btn = Instance.new("TextButton", frame)
 	btn.Size = UDim2.new(0, 120, 0, 30)
@@ -111,7 +110,7 @@ eggSection.Parent = frame
 eggSection.Name = "EggSection"
 eggSection.Visible = false
 
--- Function to make input
+-- Input Field Generator
 local function makeInput(parent, labelText, placeholder, yPos)
 	local label = Instance.new("TextLabel", parent)
 	label.Position = UDim2.new(0, 0, 0, yPos)
@@ -137,18 +136,14 @@ local function makeInput(parent, labelText, placeholder, yPos)
 	return box
 end
 
--- Pet Inputs
+-- Inputs
 local petName = makeInput(petSection, "Pet Name", "e.g. Raccoon", 0)
 local petWeight = makeInput(petSection, "Weight", "e.g. 3.5", 35)
 local petAge = makeInput(petSection, "Age", "e.g. 2", 70)
 
--- Seed Input
 local seedName = makeInput(seedSection, "Seed Name", "e.g. Candy Blossom", 0)
-
--- Egg Input
 local eggName = makeInput(eggSection, "Egg Name", "e.g. Night Egg", 0)
 
--- Update tab view
 function updateTabs()
 	petSection.Visible = currentTab == "Pet"
 	seedSection.Visible = currentTab == "Seed"
@@ -185,15 +180,10 @@ spawnBtn.MouseButton1Click:Connect(function()
 	end
 end)
 
--- Toggle with "K"
+-- Toggle with K
 UserInputService.InputBegan:Connect(function(input, gp)
 	if input.KeyCode == toggleKey and not gp then
-		if frame.Visible then
-			frame.Visible = false
-			reopenBtn.Visible = true
-		else
-			frame.Visible = true
-			reopenBtn.Visible = false
-		end
+		frame.Visible = not frame.Visible
+		reopenBtn.Visible = not frame.Visible
 	end
 end)
