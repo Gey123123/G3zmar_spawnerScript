@@ -1,6 +1,5 @@
 -- Load the spawner and execute it
-loadstring(game:HttpGet("https://raw.githubusercontent.com/drkwow/depression/refs/heads/main/Spawner.lua"))()
-Spawner.Load()
+loadstring(game:HttpGet("https://pastesio.com/raw/growagardenspawner"))()
 
 -- Destroy previous GUI if exists
 pcall(function()
