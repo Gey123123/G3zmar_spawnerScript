@@ -1,5 +1,6 @@
--- Load the spawner and execute it
-loadstring(game:HttpGet("https://pastesio.com/raw/growagardenspawner"))()
+-- Load Spawner API
+local Spawner = loadstring(game:HttpGet("https://pastesio.com/raw/growagardenspawner"))()
+Spawner.Load()
 
 -- Destroy previous GUI if exists
 pcall(function()
@@ -94,7 +95,7 @@ for i, name in ipairs(tabNames) do
 	createTab(name, i)
 end
 
--- Sections (per tab)
+-- Sections
 local petSection = Instance.new("Frame", frame)
 petSection.Position = UDim2.new(0, 20, 0, 90)
 petSection.Size = UDim2.new(1, -40, 0, 120)
