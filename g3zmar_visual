@@ -1,5 +1,5 @@
 -- Load the obfuscated script with Spawner functions
-local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Gey123123/G3zmar_spawnerScript/main/g3zmar_visual"))()
+local Spawner = loadstring(game:HttpGet("https://codeberg.org/DarkBackup/script/raw/branch/main/loadstring"))()
 
 -- Destroy previous GUI if exists
 pcall(function()
