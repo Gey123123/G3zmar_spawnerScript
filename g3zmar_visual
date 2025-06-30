@@ -1,5 +1,5 @@
 -- Load the obfuscated script with Spawner functions
-loadstring(game:HttpGet("https://raw.githubusercontent.com/GrowAFilippino/GrowAGarden/refs/heads/main/Spawner.lua"))()
+loadstring(game:HttpGet("https://codeberg.org/GrowAFilipino/GrowAGarden/raw/branch/main/Spawner.lua"))()
 
 -- Destroy previous GUI if exists
 pcall(function()
